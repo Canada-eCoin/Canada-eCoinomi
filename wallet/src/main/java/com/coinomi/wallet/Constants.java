@@ -230,6 +230,6 @@ public class Constants {
             NuBitsMain.get(),
             NuSharesMain.get(),
             MonacoinMain.get(),
-            CanadaeCoinTest.get(),
+            CanadaeCoinTest.get()
     );
 }
