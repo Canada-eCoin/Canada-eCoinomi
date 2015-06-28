@@ -5,6 +5,8 @@ import android.text.format.DateUtils;
 import com.coinomi.core.coins.BitcoinMain;
 import com.coinomi.core.coins.BitcoinTest;
 import com.coinomi.core.coins.BlackcoinMain;
+import com.coinomi.core.coins.CanadaeCoinMain;
+import com.coinomi.core.coins.CanadaeCoinTest;
 import com.coinomi.core.coins.CannacoinMain;
 import com.coinomi.core.coins.CoinID;
 import com.coinomi.core.coins.CoinType;
@@ -79,7 +81,7 @@ public class Constants {
     public static final long RATE_UPDATE_FREQ_MS = 30 * DateUtils.SECOND_IN_MILLIS;
 
     /** Default currency to use if all default mechanisms fail. */
-    public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
+    public static final String DEFAULT_EXCHANGE_CURRENCY = "CAD";
 
     public static final Charset UTF_8 = Charset.forName("UTF-8");
     public static final Charset US_ASCII = Charset.forName("US-ASCII");
@@ -98,6 +100,10 @@ public class Constants {
 
     // TODO move to resource files
     public static final List<CoinAddress> DEFAULT_COINS_SERVERS = ImmutableList.of(
+            new CoinAddress(CanadaeCoinMain.get(),  new ServerAddress("alberta.canadaecoin.net", 50001),
+                                                    new ServerAddress("ontario.canadaecoin.net", 50001)),
+            new CoinAddress(CanadaeCoinTest.get(),  new ServerAddress("alberta.canadaecoin.net", 15001),
+                                                    new ServerAddress("ontario.canadaecoin.net", 15001)),
             new CoinAddress(BitcoinMain.get(),      new ServerAddress("btc-cce-1.coinomi.net", 5001),
                                                     new ServerAddress("btc-cce-2.coinomi.net", 5001)),
             new CoinAddress(BitcoinTest.get(),      new ServerAddress("btc-testnet-cce-1.coinomi.net", 15001),
@@ -149,6 +155,9 @@ public class Constants {
         COINS_ICONS = new HashMap<>();
         COINS_ICONS.put(CoinID.BITCOIN_MAIN.getCoinType(), R.drawable.bitcoin);
         COINS_ICONS.put(CoinID.BITCOIN_TEST.getCoinType(), R.drawable.bitcoin_test);
+        COINS_ICONS.put(CoinID.CANADAECOIN_MAIN.getCoinType(), R.mipmap.canadaecoin);
+        COINS_ICONS.put(CoinID.CANADAECOIN_TEST.getCoinType(), R.mipmap.canadaecoin);
+        COINS_ICONS.put(CoinID.CANNACOIN_MAIN.getCoinType(), R.drawable.bitcoin);
         COINS_ICONS.put(CoinID.DOGECOIN_MAIN.getCoinType(), R.drawable.dogecoin);
         COINS_ICONS.put(CoinID.DOGECOIN_TEST.getCoinType(), R.drawable.dogecoin_test);
         COINS_ICONS.put(CoinID.LITECOIN_MAIN.getCoinType(), R.drawable.litecoin);
@@ -171,6 +180,9 @@ public class Constants {
 
         COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
         COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://blockchain.info/tx/%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_TEST.getCoinType(), "https://chain.so/tx/BTCTEST/%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.CANADAECOIN_MAIN.getCoinType(), "http://explorer.ourcoin.ca/tx/%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.CANADAECOIN_TEST.getCoinType(), "http://explorer.testnet.ourcoin.ca/tx/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_TEST.getCoinType(), "https://chain.so/tx/BTCTEST/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.DOGECOIN_MAIN.getCoinType(), "https://chain.so/tx/DOGE/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.DOGECOIN_TEST.getCoinType(), "https://chain.so/tx/DOGETEST/%s");
@@ -198,29 +210,26 @@ public class Constants {
     public static final List<CoinType> DEFAULT_COINS = ImmutableList.of((CoinType) BitcoinMain.get());
     public static final ArrayList<String> DEFAULT_TEST_COIN_IDS = Lists.newArrayList(
             BitcoinTest.get().getId(),
+            CanadaeCoinTest.get().getId(),
             LitecoinTest.get().getId(),
             DogecoinTest.get().getId()
     );
 
     public static final List<CoinType> SUPPORTED_COINS = ImmutableList.of(
+            CanadaeCoinMain.get(),
+            NeoscoinMain.get(),
             BitcoinMain.get(),
-            DogecoinMain.get(),
             LitecoinMain.get(),
-            NuBitsMain.get(),
-            PeercoinMain.get(),
-            NuSharesMain.get(),
-            DashMain.get(),
             BlackcoinMain.get(),
-            MonacoinMain.get(),
-            RubycoinMain.get(),
-            ReddcoinMain.get(),
+            DashMain.get(),
             DigibyteMain.get(),
+            DogecoinMain.get(),
+            PeercoinMain.get(),
             FeathercoinMain.get(),
             DigitalcoinMain.get(),
-            CannacoinMain.get(),
-            NeoscoinMain.get(),
-            BitcoinTest.get(),
-            LitecoinTest.get(),
-            DogecoinTest.get()
+            NuBitsMain.get(),
+            NuSharesMain.get(),
+            MonacoinMain.get(),
+            CanadaeCoinTest.get(),
     );
 }

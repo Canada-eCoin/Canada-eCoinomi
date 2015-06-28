@@ -16,6 +16,8 @@ import java.util.Set;
  * @author John L. Jegutanis
  */
 public enum CoinID {
+    CANADAECOIN_MAIN(CanadaeCoinMain.get()),
+    CANADAECOIN_TEST(CanadaeCoinTest.get()),
     BITCOIN_MAIN(BitcoinMain.get()),
     BITCOIN_TEST(BitcoinTest.get()),
     LITECOIN_MAIN(LitecoinMain.get()),
