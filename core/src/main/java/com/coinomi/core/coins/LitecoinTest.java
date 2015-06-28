@@ -14,7 +14,7 @@ public class LitecoinTest extends CoinType {
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         spendableCoinbaseDepth = 100;
 
-        name = "Litecoin Test";
+        name = "Litecoin Testnet";
         symbol = "LTCt";
         uriScheme = "litecoin";
         bip44Index = 1;

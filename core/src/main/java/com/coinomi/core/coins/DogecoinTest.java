@@ -14,7 +14,7 @@ public class DogecoinTest extends CoinType {
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         spendableCoinbaseDepth = 240; // COINBASE_MATURITY_NEW
 
-        name = "Dogecoin Test";
+        name = "Dogecoin Testnet";
         symbol = "DOGEt";
         uriScheme = "dogecoin";
         bip44Index = 1;

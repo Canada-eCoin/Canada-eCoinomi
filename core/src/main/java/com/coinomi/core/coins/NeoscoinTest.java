@@ -13,7 +13,7 @@ public class NeoscoinTest extends CoinType {
         spendableCoinbaseDepth = 100;
         dumpedPrivateKeyHeader = 239;
 
-        name = "Neoscoin Test";
+        name = "Neoscoin Testnet";
         symbol = "NEOSt";
         uriScheme = "neoscoin";
         bip44Index = 1;

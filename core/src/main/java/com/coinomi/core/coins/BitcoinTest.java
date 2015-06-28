@@ -15,7 +15,7 @@ public class BitcoinTest extends CoinType {
         spendableCoinbaseDepth = 100;
         dumpedPrivateKeyHeader = 239;
 
-        name = "Bitcoin Test";
+        name = "Bitcoin Testnet";
         symbol = "BTCt";
         uriScheme = "bitcoin";
         bip44Index = 1;
